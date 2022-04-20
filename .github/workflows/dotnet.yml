@@ -19,5 +19,3 @@ jobs:
         dotnet-version: 5.0.x
     - name: Build
       run: csc bot.cs
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
