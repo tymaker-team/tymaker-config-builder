@@ -7,12 +7,16 @@ public class Program
 		//Prints version and title into console
 		Console.Write("Thank-you note bot");
 		Console.Write('\n');
-		Console.Write("Version 1.0.0");
+		Console.Write("Version 0.1.2");
 		Console.Write('\n');
 		//sets up restart counter
 		int attempts = 0;
 		bool done = false;
 		//Sets up restart loop
+		string reciever = "placeholder";
+		string gift = "placeholder";
+		string party = "placeholder";
+		string title = "placeholder";
 		while (!done)
 		{
 			//sets up restart counter (attempts)
@@ -27,19 +31,19 @@ public class Program
 			Console.Write("Who are you writing to?");
 			Console.Write('\n');
 			//Reads answer to varible "reciever"
-			string reciever = Console.ReadLine();
+			reciever = Console.ReadLine();
 			Console.Write('\n');
 			//Asks what gift was recieved
 			Console.Write("What gift did you get from " + reciever + "?");
 			Console.Write('\n');
 			//Reads answer to varible "gift"
-			string gift = Console.ReadLine();
+			gift = Console.ReadLine();
 			Console.Write('\n');
 			//Asks what type party the person went to
 			Console.Write("What party did you invite " + reciever + " to? (Just write the noun with no connectors)");
 			Console.Write('\n');
 			//Reads answer to "party"
-			string party = Console.ReadLine();
+			party = Console.ReadLine();
 			Console.Write('\n');
 			//Prints part 1 of the letter
 			Console.Write("Here is your letter so far:");
@@ -70,6 +74,13 @@ public class Program
 					break;
 			//restarts the program
 			}
+		}
+		Console.Write("Section 2 \n\n");
+		bool done1 = false;
+		while (!done1)
+		{
+			Console.Write("What do you recognize " + reciever + " as? (e.g: \"aunt\", \"friend\", \"grandfather\" \n");
+			title = Console.ReadLine();
 		}
 	}
 }
