@@ -29,6 +29,12 @@ jobs:
     
     - name: Allow executing for Linux
       run: chmod a+x build/linux/tymaker
+      
+    - name: Tar files for Mac
+      run: tar -cvf tymaker-mac.tar /build/mac
+      
+    - name: Tar files for Linux
+      run: tar -cvf tymaker-linux.tar /build/linux
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.0.0
@@ -42,11 +48,11 @@ jobs:
       with:
         # Artifact name
         name: MacOS
-        path: build/mac
+        path: tymaker-mac.tar
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.0.0
       with:
         # Artifact name
         name: Linux
-        path: build/linux
+        path: tymaker-linux.tar
