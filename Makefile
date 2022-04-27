@@ -10,8 +10,18 @@ build:
 	dotnet build
 
 publish:
-	dotnet publish --output "publish" --runtime linux-x64 --configuration Release -p:PublishSingleFile=true --self-contained true
-
+	ifeq ($(OS),Windows_NT)
+		dotnet publish --output "publish" --runtime win-x64 --configuration Release -p:PublishSingleFile=true --self-contained true
+	else
+		UNAME_S := $(shell uname -s)
+		ifeq ($(UNAME_S),Linux)
+			dotnet publish --output "publish" --runtime linux-x64 --configuration Release -p:PublishSingleFile=true --self-contained true
+		else
+			ifeq ($(UNAME_S),Darwin)
+			dotnet publish --output "publish" --runtime osx-x64 --configuration Release -p:PublishSingleFile=true --self-contained true
+			endif
+		endif
+	endif
 run:
 	dotnet run
   
