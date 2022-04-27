@@ -17,7 +17,7 @@ run:
   
 install:
 	cp publish/tymaker /usr/bin/tymaker
-  	echo If an error is thrown, make sure you have ran 'dotnet publish' first.
+	echo If an error is thrown, make sure you have ran 'dotnet publish' first.
 
 uninstall:
   rm /usr/bin/tymaker
