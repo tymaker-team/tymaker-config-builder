@@ -16,14 +16,31 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 5.0.x
-    - name: Build
-      run: csc bot.cs
+        dotnet-version: 6.0.x
+    - name: Build Windows
+      run: dotnet publish --output "build/windows" --runtime win-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+    - name: Build Mac
+      run: dotnet publish --output "build/mac" --runtime osx-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+    - name: Build Linux
+      run: dotnet publish --output "build/linux" --runtime linux-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
     
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.0.0
       with:
         # Artifact name
-        name: tymaker
-        path: bot.exe
+        name: Windows
+        path: build/windows
+    
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        # Artifact name
+        name: MacOS
+        path: build/mac
 
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        # Artifact name
+        name: Linux
+        path: build/linux
