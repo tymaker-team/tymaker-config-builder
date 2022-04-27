@@ -1,0 +1,2 @@
+/Users/jeverman/tymaker-group/exe/tymaker.pdb
+/Users/jeverman/tymaker-group/exe/tymaker.exe

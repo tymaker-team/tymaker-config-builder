@@ -1,0 +1,5 @@
+/Users/jeverman/tymaker-group/bin/Debug/net6.0/publish/tymaker
+/Users/jeverman/tymaker-group/bin/Debug/net6.0/publish/tymaker.dll
+/Users/jeverman/tymaker-group/bin/Debug/net6.0/publish/tymaker.deps.json
+/Users/jeverman/tymaker-group/bin/Debug/net6.0/publish/tymaker.runtimeconfig.json
+/Users/jeverman/tymaker-group/bin/Debug/net6.0/publish/tymaker.pdb
