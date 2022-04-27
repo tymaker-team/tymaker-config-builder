@@ -20,4 +20,4 @@ install:
 	echo If an error is thrown, make sure you have ran 'dotnet publish' first.
 
 uninstall:
-  rm /usr/bin/tymaker
+	rm /usr/bin/tymaker
