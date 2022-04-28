@@ -1,4 +1,4 @@
-all : clean restore build publish
+all : clean restore publish
 
 clean:
 	dotnet clean
