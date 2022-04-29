@@ -23,8 +23,8 @@ run:
 	dotnet run
   
 install:
-	link publish/tymaker /usr/bin/tymaker
+	cp publish/tymaker /usr/bin/tymaker
 	echo If an error is thrown, make sure you have ran 'dotnet publish' first.
 
 uninstall:
-	unlink /usr/bin/tymaker
+	rm /usr/bin/tymaker
