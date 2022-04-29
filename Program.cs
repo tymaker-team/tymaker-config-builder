@@ -152,7 +152,7 @@ public class Program
             bool done2 = false;
             while (!done2)
             {
-                Console.Write("Would you like to save your letter to a text file for later use?\nType in \"yes\" or \"no\".\n");
+                Console.Write("Would you like to save your letter to a text file for later use?\nType in \"yes\" or \"no\". This will overwrite any text file with the same name.\n");
                 save = Console.ReadLine();
                 switch (save)
                 {
@@ -173,7 +173,7 @@ public class Program
                 Console.Write('\n');
                 string[] lines = { "Dear " + reciever + ",", "", "Thank you so much for coming to my " + party + ". Thank you so much for the " + gift + ". You are " + article + " " + recognize + " " + title + ".", "", address + ", " + sender + "." };
                 string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, fileName + ".txt")))
+                using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, fileName + ".txt"), false))
                 {
                     foreach (string line in lines)
                         outputFile.WriteLine(line);
