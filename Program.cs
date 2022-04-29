@@ -183,12 +183,10 @@ public class Program
                 switch (openFile)
                 {
                     case "yes":
-                        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                        {
-                            Process p = new Process();
+                        Process p = new Process();
                             ProcessStartInfo pi = new ProcessStartInfo();
                             pi.UseShellExecute = true;
-                            pi.FileName = @docPath + "\"" + fileName + ".txt";
+                            pi.FileName = @Path.Combine(docPath, fileName + ".txt");
                             p.StartInfo = pi;
 
                             try
@@ -199,24 +197,6 @@ public class Program
                             {
 
                             }
-                        }
-                        else
-                        {
-                            Process p = new Process();
-                            ProcessStartInfo pi = new ProcessStartInfo();
-                            pi.UseShellExecute = true;
-                            pi.FileName = @docPath + "/" + fileName + ".txt";
-                            p.StartInfo = pi;
-
-                            try
-                            {
-                                p.Start();
-                            }
-                            catch (Exception)
-                            {
-
-                            }
-                        }
 
 
 
