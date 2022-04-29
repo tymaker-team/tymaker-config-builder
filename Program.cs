@@ -10,7 +10,7 @@ public class Program
         //Prints version and title into console
         Console.Write("Thank-you note bot");
         Console.Write('\n');
-        Console.Write("Version 0.1.2");
+        Console.Write("Version 1.0.0");
         Console.Write('\n');
         //sets up restart counter
         int attempts = 0;
