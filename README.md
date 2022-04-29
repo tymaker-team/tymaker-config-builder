@@ -11,4 +11,4 @@ The easiest way to build tymaker yourself is to use the Makefile included. Simpl
 ## Installing
 After using `make`, you can type in `sudo make install` to install the build in the `publish` folder to your `/usr/bin` directory.
 # Disclaimer
-All new features are tested on Arch Linux, so no guarantees it will work anywhere else. I also cannot guarantee that it will work at all (Thanks MIT license)
+All new features are tested on Arch Linux, so no guarantees it will work anywhere else. I also cannot guarantee that it will work at all and that your PC will not explode (Thanks MIT license)
