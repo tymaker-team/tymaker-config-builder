@@ -2,7 +2,7 @@
 Generates Thank-You notes from information
 This is a very basic c# program that I made in 3 hours at school. It can be used for writing thank-you notes, although it it is not finished. A stable release will be posted soon.
 # Building Instructions
-## Github CI
+## Github Actions
 The easiest way to use the program is to download the latest build from [![Tymaker Builds](https://github.com/Anti-Apple4life/tymaker-group/actions/workflows/tymaker.yml/badge.svg)](https://github.com/Anti-Apple4life/tymaker-group/actions/workflows/tymaker.yml).
 ## Using `dotnet`
 You can build to your own liking using the `dotnet` command. This offers more control than using the Makefile and downloading a build.
@@ -11,4 +11,4 @@ The easiest way to build tymaker yourself is to use the Makefile included. Simpl
 ## Installing
 After using `make`, you can type in `sudo make install` to install the build in the `publish` folder to your `/usr/bin` directory.
 # Disclaimer
-All new features are tested on Arch Linux, so no guarantees it will work anywhere else.
+All new features are tested on Arch Linux, so no guarantees it will work anywhere else. I also cannot guarantee that it will work at all (Thanks MIT license)
