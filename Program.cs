@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 public class Program
 {
@@ -184,19 +181,19 @@ public class Program
                 {
                     case "yes":
                         Process p = new Process();
-                            ProcessStartInfo pi = new ProcessStartInfo();
-                            pi.UseShellExecute = true;
-                            pi.FileName = @Path.Combine(docPath, fileName + ".txt");
-                            p.StartInfo = pi;
+                        ProcessStartInfo pi = new ProcessStartInfo();
+                        pi.UseShellExecute = true;
+                        pi.FileName = @Path.Combine(docPath, fileName + ".txt");
+                        p.StartInfo = pi;
 
-                            try
-                            {
-                                p.Start();
-                            }
-                            catch (Exception)
-                            {
+                        try
+                        {
+                            p.Start();
+                        }
+                        catch (Exception)
+                        {
 
-                            }
+                        }
 
 
 
