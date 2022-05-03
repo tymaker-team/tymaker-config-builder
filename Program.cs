@@ -62,7 +62,7 @@ namespace SerializeExtra
 
             string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             File.WriteAllText(Path.Combine(savePath, "tymaker.json"), jsonString);
-            Console.Write("Configuration file (tymaker.json) is saved at " + savePath);
+            Console.Write("Configuration file (tymaker.json) is saved at " + savePath + "\n\n");
         }
     }
 }
