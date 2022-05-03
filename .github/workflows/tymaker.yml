@@ -1,0 +1,58 @@
+name: Tymaker Builds
+
+on:
+  push:
+    branches: [ tymaker-config-builder ]
+  pull_request:
+    branches: [ tymaker-config-builder ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Build Windows
+      run: dotnet publish --output "build/windows" --runtime win-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+    - name: Build Mac
+      run: dotnet publish --output "build/mac" --runtime osx-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+    - name: Build Linux
+      run: dotnet publish --output "build/linux" --runtime linux-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+    
+    - name: Allow executing for Mac
+      run: chmod a+x build/mac/tymaker-config-builder
+    
+    - name: Allow executing for Linux
+      run: chmod a+x build/linux/tymaker-config-builder
+      
+    - name: Tar files for Mac
+      run: tar -cvf tymaker-config-builder-mac.tar build/mac
+      
+    - name: Tar files for Linux
+      run: tar -cvf tymaker-config-builder-linux.tar build/linux
+    
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        # Artifact name
+        name: Windows
+        path: build/windows
+    
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        # Artifact name
+        name: MacOS
+        path: tymaker-config-builder-mac.tar
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        # Artifact name
+        name: Linux
+        path: tymaker-config-builder-linux.tar
