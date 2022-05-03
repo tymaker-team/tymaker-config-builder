@@ -18,11 +18,11 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Build Windows
-      run: dotnet publish --output "build/windows" --runtime win-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+      run: dotnet publish --output "build/windows" --runtime win-x64 --configuration Release -p:PublishSingleFile=true --self-contained true
     - name: Build Mac
-      run: dotnet publish --output "build/mac" --runtime osx-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+      run: dotnet publish --output "build/mac" --runtime osx-x64 --configuration Release -p:PublishSingleFile=true --self-contained true
     - name: Build Linux
-      run: dotnet publish --output "build/linux" --runtime linux-x64 --configuration Release -p:PublishSingleFile=true -p:PublishTrimmed=true --self-contained true
+      run: dotnet publish --output "build/linux" --runtime linux-x64 --configuration Release -p:PublishSingleFile=true --self-contained true
     
     - name: Allow executing for Mac
       run: chmod a+x build/mac/tymaker-config-builder
