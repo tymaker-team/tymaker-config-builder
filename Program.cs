@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
 
+
 namespace SerializeExtra
 {
     
@@ -16,7 +17,6 @@ namespace SerializeExtra
 
     public class Program
     {
-        
         public static void Main()
         {
             
