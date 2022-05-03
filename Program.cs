@@ -2,8 +2,10 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
+
 namespace SerializeExtra
 {
+    
     public class LetterInfo
     {
         public string? gift { get; set; }
@@ -14,9 +16,10 @@ namespace SerializeExtra
 
     public class Program
     {
-
+        
         public static void Main()
         {
+            
             Console.Write("Thank-you note bot JSON generator");
             Console.Write('\n');
             Console.Write("Version 1.0.0");
