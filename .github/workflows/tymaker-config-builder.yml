@@ -1,4 +1,4 @@
-name: Tymaker config-maker Builds
+name: Tymaker-config-builder Builds
 
 on:
   push:
