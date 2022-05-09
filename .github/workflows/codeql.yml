@@ -13,10 +13,10 @@ name: "CodeQL for config-builder"
 
 on:
   push:
-    branches: [ tymaker-config-builder ]
+    branches: [ main ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ tymaker-config-builder ]
+    branches: [ main ]
   schedule:
     - cron: '26 6 * * 0'
 
