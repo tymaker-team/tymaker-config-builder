@@ -2,9 +2,9 @@ name: Tymaker-config-builder Builds
 
 on:
   push:
-    branches: [ tymaker-config-builder ]
+    branches: [ main ]
   pull_request:
-    branches: [ tymaker-config-builder ]
+    branches: [ main ]
 
 jobs:
   build:
