@@ -2,10 +2,10 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
+using System.Text.Json.Serialization.Metadata;
 
 
-namespace SerializeExtra
-{
+
     
     public class LetterInfo
     {
@@ -15,11 +15,13 @@ namespace SerializeExtra
         public string? address { get; set; }
     }
 
+
+
     public class Program
     {
         public static void Main()
         {
-            
+            JsonTypeInfo<LetterInfo> typeInfo = SourceGenerationContext.Default.LetterInfo;
             Console.Write("Thank-you note bot JSON generator");
             Console.Write('\n');
             Console.Write("Version 1.0.0");
@@ -59,13 +61,15 @@ namespace SerializeExtra
                 letterInfo.address = null;
             }
             Console.Write("\n\n");
-            
-            var options = new JsonSerializerOptions { WriteIndented = true };
-            string jsonString = JsonSerializer.Serialize(letterInfo, options);
+            string jsonString = JsonSerializer.Serialize(letterInfo, typeInfo);
 
             string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             File.WriteAllText(Path.Combine(savePath, "tymaker.json"), jsonString);
             Console.Write("Configuration file (tymaker.json) is saved at " + savePath + "\n\n");
         }
+
     }
-}
+
+    [JsonSerializable(typeof(LetterInfo))]
+    internal partial class SourceGenerationContext : JsonSerializerContext { }
+
